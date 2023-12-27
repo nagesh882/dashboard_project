@@ -1,0 +1,505 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Academics</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <!-- bootstrap link -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+  <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet">
+
+  <link rel="stylesheet" href="{% static 'fonts/icomoon/style.css' %}">
+
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}">
+  <link rel="stylesheet" href=" {% static 'css/owl.carousel.min.css'%}">
+  <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css'%}">
+  <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css'%}">
+
+  <link rel="stylesheet" href="{% static 'css/jquery.fancybox.min.css' %}">
+
+  <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+
+  <link rel="stylesheet" href="{% static 'fonts/flaticon/font/flaticon.css' %}">
+
+  <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+
+  <link href="{% static 'css/jquery.mb.YTPlayer.min.css' %}" media="all" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+  <style>
+    #div1{
+      background-image: url("{% static 'img/ypkcq7bh.png'%}");
+    }
+
+    #div2{
+      background-image: url("{% static 'images/course_6.jpg' %}")
+    }
+
+    #div3{
+      background-image: url("{% static 'img/download.jpg' %}")
+    }
+
+    #div4{
+      background-image: url("{%static 'img/IT_f.webp'%}")
+    }
+
+    #div5{
+      background-image: url("{% static 'images/hero_1.jpg' %}")
+    }
+
+    #div6{
+      background-image: url("{% static 'images/hero_1.jpg'%}")
+    }
+  </style>
+
+</head>
+
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+  <div class="site-wrap">
+
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+
+
+    <div class="py-2 bg-light">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 d-none d-lg-block">
+            <a href="#" class="small mr-3"><span class="icon-question-circle-o mr-2"></span> Have a questions?</a>
+            <a href="#" class="small mr-3"><span class="icon-phone2 mr-2"></span> 10 20 123 456</a>
+            <!-- <a href="#" class="small mr-3"><span class="icon-phone2 mr-2"></span> 55 24 116 654</a> -->
+            <a href="#" class="small mr-3"><span class="icon-envelope-o mr-2"></span> info@mydomain.com</a>
+          </div>
+          <div class="col-lg-6 text-right">
+            <a class="small btn btn-primary px-4 py-2 rounded-0" href="{% url 'milogin' %}"> Student Login</a>
+            <a class="small btn btn-info px-4 py-2 rounded-0" href="{% url 'admin_login' %}"> Admin Login</a>
+            </a>
+            <!-- <a href="{% url 'login' %}" class="small mr-3"><span class="icon-unlock-alt"></span> Log In</a>
+            <a href="{% url 'register' %}" class="small btn btn-primary px-4 py-2 rounded-0"><span class="icon-users"></span>
+              Register</a> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
+
+      <div class="container">
+        <div class="d-flex align-items-center">
+          <div class="site-logo">
+            <a href="{% url 'jocker' %}" class="d-block">
+              <img src="{% static 'images/logo.jpg' %}" alt="Image" class="img-fluid">
+            </a>
+          </div>
+          <div class="mr-auto">
+            <nav class="site-navigation position-relative text-right" role="navigation">
+              <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
+                <li class="action">
+                  <a href="{% url 'jocker' %}" class="nav-link text-left">Home</a>
+                </li>
+                <li class="has-children">
+                  <a href="{% url 'display_app2_data' %}" class="nav-link text-left">All Courses</a>
+                  <ul class="dropdown">
+                    <li class="has-children active">
+                      <a href="#" class="nav-link text-left">Programming Languages</a>
+                      <ul class="dropdown">
+                        <li><a href="#">Java</a></li>
+                        <li><a href="{% url 'python' %}">Python</a></li>
+                      </ul>
+                    </li>
+                    <li class="has-children">
+                      <a href="#" class="nav-link text-left">Web Development</a>
+                      <ul class="dropdown">
+                        <li><a href="#">UI Development</a></li>
+                        <li><a href="#">Angular</a></li>
+                        <li><a href="#">Mean Stack</a></li>
+                        <li><a href="#">React</a></li>
+                        <li><a href="#">Mern Stack</a></li>
+                      </ul>
+                    </li>
+                    <li class="has-children">
+                      <a href="#" class="nav-link text-left">Software Testing</a>
+                      <ul class="dropdown">
+                        <li><a href="#">Complete Software Testing</a></li>
+                        <li><a href="#">Selenium + Java Automation</a></li>
+                        <li><a href="#">Selenium + Python Automation</a></li>
+                        <li><a href="#">Full Stack Testing</a></li>
+                        <li><a href="#">API Testing</a></li>
+                      </ul>
+                    </li>
+                    <li class="has-children">
+                      <a href="#" class="nav-link text-left">Cloud Computing</a>
+                      <ul class="dropdown">
+                        <li><a href="#">AWS</a></li>
+                        <li><a href="#">Devops</a></li>
+                      </ul>
+                    </li>
+                    <li class="has-children">
+                      <a href="#" class="nav-link text-left">Data Science</a>
+                      <ul class="dropdown">
+                        <li><a href="#">Machine Learning/Artificial Intelligence</a></li>
+                      </ul>
+                    </li>
+                    <li class="has-children">
+                      <a href="#" class="nav-link text-left">Full Stack Development</a>
+                      <ul class="dropdown">
+                        <li><a href="#">Python Full Stack Development</a></li>
+                        <li><a href="#">Java Full Stack Development</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li class="has-children">
+                  <a href="#" class="nav-link text-left">Jobs</a>
+                  <ul class="dropdown">
+                    <li><a href="{% url 'news-single' %}">Freshers Jobs</a></li>
+                    <li><a href="{% url 'experence' %}">Experience Jobs</a></li>
+                  </ul>
+                </li>
+                <li class="has-children">
+                  <a href="#" class="nav-link text-left">Placement</a>
+                  <ul class="dropdown">
+                    <li><a href="{% url 'fplace' %}">Freshers Placement</a></li>
+                    <li><a href="{% url 'eplace' %}">Experienced Placement</a></li>
+                    <li><a href="{% url 'tens' %}">Testimonial</a></li>
+                    <li><a href="{% url 'campus' %}">Drives Cyber Success</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                <li class="has-children">
+                  <a href="#" class="nav-link text-left">About Us</a>
+                  <ul class="dropdown">
+                    <li><a href="{% url 'about' %}">Career</a></li>
+                    <li><a href="{% url 'clients' %}">Clients</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="{% url 'blog' %}" class="nav-link text-left">Blogs</a>
+                </li>
+                <li>
+                  <a href="{% url 'contact' %}" class="nav-link text-left">Contact</a>
+                </li>
+              </ul>
+            </nav>
+
+          </div>
+          <div class="ml-auto">
+            <div class="social-wrap">
+              <a href="https://www.facebook.com/"><span class="icon-facebook"></span></a>
+              <a href="https://twitter.com/"><span class="icon-twitter"></span></a>
+              <a href="https://www.instagram.com/"><span class="icon-linkedin"></span></a>
+
+              <a href="#" class="d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black"><span
+                  class="icon-menu h3"></span></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </header>
+
+    <!-- common end -->
+
+
+
+    <!-- dynamic start -->
+
+    {% block 'body' %}
+
+    
+    {% endblock 'body' %}
+
+    <!-- dynamic end -->
+    <div class="site-section" style="background-color: rgb(227, 226, 226);">
+      <div class="container">
+        <h2 style="text-align: center; color: #00024d;"><strong>Client Resources</strong></h2><br>
+        <div class="col-lg-12">
+          <div class="row mb-5">
+            <div class="col-lg-4 col-md-6 col-sm-6 mb-5 p-2 mb-lg-0">
+              <div class=" bg-white">
+                <img src="{%static 'client/client-1.webp'%}" alt="">
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6 mb-5 p-2 mb-lg-0">
+              <div class=" bg-white">
+                <img src="{%static 'client/client-2.webp'%}" alt="">
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6 mb-5 p-2 mb-lg-0">
+              <div class=" bg-white">
+                <img src="{%static 'client/client-3.webp'%}" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="row mb-5">
+            <div class="col-lg-4 col-md-6 col-sm-6 mb-5 p-2 mb-lg-0">
+              <div class=" bg-white">
+                <img src="{%static 'client/client-4.webp'%}" alt="">
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6 mb-5 p-2 mb-lg-0">
+              <div class=" bg-white">
+                <img src="{%static 'client/client-5.webp'%}" alt="">
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6 mb-5 p-2 mb-lg-0">
+              <div class=" bg-white">
+                <img src="{%static 'client/client-6.webp'%}" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="mx-auto justify-content-center align-self-center align-items-center">
+            <center><a href="clients.html" class="btn btn-info pt-2 pb-2 pr-5 pl-5 mt-3 text-white"
+                style="border-radius: 5px;">View More</a></center>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- // 05 - Block -->
+    <div class="site-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-lg-4 col-md-6 col-sm-6 mb-5 p-2 mb-lg-0">
+            <h2 class="section-title-underline">
+              <span>Testimonials</span>
+            </h2>
+          </div>
+        </div>
+
+
+        <div class="owl-slide owl-carousel">
+
+          <div class="ftco-testimonial-1">
+            <div class="ftco-testimonial-vcard d-flex align-items-center mb-4">
+              <img src="{%static 'images/person_1.jpg'%}" alt="Image" class="img-fluid mr-3">
+              <div>
+                <h3>Allison Holmes</h3>
+                <span>Designer</span>
+              </div>
+            </div>
+            <div>
+              <p>&ldquo;Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque, mollitia. Possimus mollitia
+                nobis libero quidem aut tempore dolore iure maiores, perferendis, provident numquam illum nisi amet
+                necessitatibus. A, provident aperiam!&rdquo;</p>
+            </div>
+          </div>
+
+          <div class="ftco-testimonial-1">
+            <div class="ftco-testimonial-vcard d-flex align-items-center mb-4">
+              <img src="{%static 'images/person_2.jpg'%}" alt="Image" class="img-fluid mr-3">
+              <div>
+                <h3>Allison Holmes</h3>
+                <span>Designer</span>
+              </div>
+            </div>
+            <div>
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque, mollitia. Possimus mollitia nobis
+                libero quidem aut tempore dolore iure maiores, perferendis, provident numquam illum nisi amet
+                necessitatibus. A, provident aperiam!</p>
+            </div>
+          </div>
+
+          <div class="ftco-testimonial-1">
+            <div class="ftco-testimonial-vcard d-flex align-items-center mb-4">
+              <img src="{%static 'images/person_4.jpg'%}" alt="Image" class="img-fluid mr-3">
+              <div>
+                <h3>Allison Holmes</h3>
+                <span>Designer</span>
+              </div>
+            </div>
+            <div>
+              <p>&ldquo;Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque, mollitia. Possimus mollitia
+                nobis libero quidem aut tempore dolore iure maiores, perferendis, provident numquam illum nisi amet
+                necessitatibus. A, provident aperiam!&rdquo;</p>
+            </div>
+          </div>
+
+          <div class="ftco-testimonial-1">
+            <div class="ftco-testimonial-vcard d-flex align-items-center mb-4">
+              <img src="{%static 'images/person_3.jpg'%}" alt="Image" class="img-fluid mr-3">
+              <div>
+                <h3>Allison Holmes</h3>
+                <span>Designer</span>
+              </div>
+            </div>
+            <div>
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque, mollitia. Possimus mollitia nobis
+                libero quidem aut tempore dolore iure maiores, perferendis, provident numquam illum nisi amet
+                necessitatibus. A, provident aperiam!</p>
+            </div>
+          </div>
+
+          <div class="ftco-testimonial-1">
+            <div class="ftco-testimonial-vcard d-flex align-items-center mb-4">
+              <img src="{%static 'images/person_2.jpg'%}" alt="Image" class="img-fluid mr-3">
+              <div>
+                <h3>Allison Holmes</h3>
+                <span>Designer</span>
+              </div>
+            </div>
+            <div>
+              <p>&ldquo;Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque, mollitia. Possimus mollitia
+                nobis libero quidem aut tempore dolore iure maiores, perferendis, provident numquam illum nisi amet
+                necessitatibus. A, provident aperiam!&rdquo;</p>
+            </div>
+          </div>
+
+          <div class="ftco-testimonial-1">
+            <div class="ftco-testimonial-vcard d-flex align-items-center mb-4">
+              <img src="{%static 'images/person_4.jpg'%}" alt="Image" class="img-fluid mr-3">
+              <div>
+                <h3>Allison Holmes</h3>
+                <span>Designer</span>
+              </div>
+            </div>
+            <div>
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque, mollitia. Possimus mollitia nobis
+                libero quidem aut tempore dolore iure maiores, perferendis, provident numquam illum nisi amet
+                necessitatibus. A, provident aperiam!</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-5 col-md-6 col-sm-6 mb-5 p-2 mb-lg-0">
+            <p class="mb-4"><img src="{%static 'images/logo.png'%}" alt="Image" class="img-fluid"></p>
+            <p>With an aim to share knowledge and make students capable of IT industries. Our Software training
+              institute
+              in Pune provides Software testing Training, Java Training, Angular JS training, Dot Net training, Android,
+              PHP training, and Python Training.</p>
+            <a href="{% url 'about' %}" class="bg-primary pt-2 pb-2 pr-4 pl-4 text-white" style="border-radius: 5px;">Learn
+              More</a>
+          </div>
+          <div class="col-lg-2 col-md-6 col-sm-6 mb-5 p-2 mb-lg-0">
+            <h3 class="footer-heading"><span>Courses</span></h3>
+            <ul class="list-unstyled">
+              <li><a href="{% url 'python' %}">Programming Languages</a></li>
+              <li><a href="#">Web Development</a></li>
+              <li><a href="#">Software Testing</a></li>
+              <li><a href="#">Cloud Computing</a></li>
+              <li><a href="#">Data Science</a></li>
+              <li><a href="#">Full Stack Development</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-6 col-sm-6 mb-5 p-2 mb-lg-0">
+            <h3 class="footer-heading"><span>Quick Links</span></h3>
+            <ul class="list-unstyled">
+              <li><a href="{% url 'about' %}">About Us</a></li>
+              <li><a href="{% url 'clients' %}">Clients</a></li>
+              <li><a href="{% url 'experence' %}">Experience Job</a></li>
+              <li><a href="{% url 'news-single' %}">Freshers Job</a></li>
+              <li><a href="{% url 'eplace' %}">Experienced Placement</a></li>
+              <li><a href="{% url 'fplace' %}">Freshers Placement</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6 mb-5 p-2 mb-lg-0">
+            <h3 class="footer-heading"><span>Find Us</span></h3>
+            <div class="mapouter">
+              <div class="gmap_canvas"><iframe
+                  src="https://maps.google.com/maps?q=%20%20ISKCON%20NVCC%20Pune&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
+                  frameborder="0" scrolling="no" style="width: 250px; height: 450;"></iframe></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+  <!-- .site-wrap -->
+
+
+  <!-- loader -->
+  <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+      <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+      <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+        stroke="#51be78" />
+    </svg></div>
+
+  <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+  <script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
+  <script src="{% static 'js/jquery-ui.js'%}"></script>
+  <script src="{% static 'js/popper.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+  <script src="{% static 'js/jquery.countdown.min.js'%}"></script>
+  <script src="{% static 'js/bootstrap-datepicker.min.js'%}"></script>
+  <script src="{% static 'js/jquery.easing.1.3.js'%}"></script>
+  <script src="{% static 'js/aos.js'%}"></script>
+  <script src="{% static 'js/jquery.fancybox.min.js'%}"></script>
+  <script src="{% static 'js/jquery.sticky.js'%}"></script>
+  <script src="{% static 'js/jquery.mb.YTPlayer.min.js'%}"></script>
+
+
+
+
+  <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+
+<script>
+
+  function change_me() {
+
+    let name = document.getElementById("fname").value;
+
+    if (name == "") {
+      document.getElementById("span1").innerHTML = "<span style='color: red; font-size: 14px;'>Please enter full name<span>";
+    } else {
+      document.getElementById("span1").innerHTML = name;
+    };
+
+    let email = document.getElementById("eaddress").value;
+
+    if (email == "") {
+      document.getElementById("span2").innerHTML = "<span style='color: red; font-size: 14px;'>Please enter valid email<span>";
+    } else {
+      document.getElementById("span2").innerHTML = email;
+    };
+
+    let Phone = document.getElementById("phone").value;
+
+    if (Phone == "") {
+      document.getElementById("span3").innerHTML = "<span style='color: red; font-size: 14px;'>Please enter valid phone number<span>";
+    } else {
+      document.getElementById("span3").innerHTML = Phone;
+    };
+
+    let tel = document.getElementById("tel").value;
+
+    if (tel == "") {
+      document.getElementById("span4").innerHTML = "<span style='color: red; font-size: 14px;'>Please enter course name<span>";
+    } else {
+      document.getElementById("span4").innerHTML = tel;
+    };
+  }
+</script>
+
+</html>

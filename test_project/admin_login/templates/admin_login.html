@@ -1,0 +1,103 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Admin Login</title>
+  <link rel="stylesheet" href="{% static 'assets/vendors/mdi/css/materialdesignicons.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/vendors/css/vendor.bundle.base.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+  <link rel="shortcut icon" href="{% static 'assets/images/favicon.ico' %}" />
+</head>
+
+<body>
+  <div class="container-scroller">
+    <div class="container-fluid page-body-wrapper full-page-wrapper">
+      <div class="content-wrapper d-flex align-items-center auth">
+        <div class="row flex-grow">
+          <div class="col-lg-4 mx-auto">
+            <div class="auth-form-light text-left p-5">
+              <div class="brand-logo">
+
+                <h1 class="text-decoration text-primary"><img style="width: 70px;" src="{% static 'user.png' %}"> &nbsp; Admin Login</h1>
+              </div>
+              <h4>Hello! let's get started</h4>
+              <h6 class="font-weight-light">Sign in to continue.</h6>
+              <form class="pt-3">
+                <div class="form-group">
+                  <input type="email" class="form-control form-control-lg" id="exampleInputEmail1"
+                    placeholder="Username">
+                </div>
+                <div class="form-group">
+                  <input type="password" class="form-control form-control-lg" id="exampleInputPassword1"
+                    placeholder="Password">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control form-control-lg" id="otp" maxlength="6" placeholder="Enter Valid OTP" required>
+                </div>
+                <p class="text-center text-warning" id="otp-display"></p>
+                <a id="yup" type="button" class="btn btn-gradient-primary btn-block mt-2" onclick="validateOTP()">Sign in</a>
+                <p class="text-center mt-4 text-danger" id="result"></p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+<script>
+  var otpData = generateOTP();
+  var otpInterval;
+
+  function generateOTP() {
+    // Generate a 6-digit OTP
+    var otp = Math.floor(100000 + Math.random() * 900000).toString();
+
+    // Set the timestamp for OTP generation
+    var timestamp = new Date().getTime();
+    otpData = { otp: otp, timestamp: timestamp };
+
+    document.getElementById("otp-display").innerText = "Generated OTP: " + otp;
+    return otpData;
+  }
+
+  function validateOTP() {
+    var enteredOTP = document.getElementById("otp").value.trim();
+
+    var actualOTP = otpData.otp;
+    var timestamp = otpData.timestamp;
+
+    // Set the time limit for OTP validity (2 minutes in milliseconds)
+    var validityDuration = 2 * 60 * 1000;
+
+    // Get the current time
+    var currentTime = new Date().getTime();
+
+    if (enteredOTP === actualOTP && currentTime - timestamp <= validityDuration) {
+      document.getElementById("result").innerHTML = "<span style='color: green;'>OTP is valid!</span>";
+      document.getElementById("yup").setAttribute("href", "{% url 'admin_home' %}");
+
+      // window.location.href = 'admin_home.html'
+    } else {
+      document.getElementById("result").innerText = "Invalid OTP or OTP has expired. Please try again.";
+    }
+  }
+
+  // Function to generate and display a new OTP every 2 minutes
+  function startOTPInterval() {
+    otpInterval = setInterval(generateOTP, 2 * 60 * 1000); // 2 minutes interval
+  }
+
+  window.onload = startOTPInterval;
+</script>
+
+<!-- External files -->
+<script src="{% static 'assets/vendors/js/vendor.bundle.base.js' %}"></script>
+<script src="{% static 'assets/js/off-canvas.js' %}"></script>
+<script src="{% static 'assets/js/hoverable-collapse.js' %}"></script>
+<script src="{% static 'assets/js/misc.js' %}"></script>
+</html>

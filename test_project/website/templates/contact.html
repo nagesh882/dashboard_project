@@ -1,0 +1,110 @@
+{% extends 'website_base.html' %}
+{% load static %}
+{% block 'body' %}
+
+<style>
+  #yup{
+    /* Define a class and set the background image */
+    background-image: url("{% static 'images/bg_1.jpg' %}");
+    /* Add other background properties as needed */
+    background-size: cover;
+    /* Other styles */
+    /* ... */
+  }
+</style>
+
+
+
+<div class="site-section ftco-subscribe-1 site-blocks-cover pb-4" id="yup" style="margin-top: 100px;">
+  <div class="container">
+    <div class="row align-items-end">
+      <div class="col-lg-7 col-md-6 col-sm-6 mb-5 p-2 mb-lg-0">
+        <h2 class="mb-0">Contact</h2>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="custom-breadcrumns border-bottom">
+  <div class="container">
+    <a href="{% url 'index' %}">Home</a>
+    <span class="mx-3 icon-keyboard_arrow_right"></span>
+    <span class="current">Contact</span>
+  </div>
+</div>
+
+<div class="site-section">
+  <div class="container-fluid" style="background-color: rgb(235, 234, 234);">
+    <div class="col-lg-12 p-5">
+      <div class="row">
+        <div class="col-lg-7 col-md-6 col-sm-6 mb-5 p-2 mb-lg-0 pl-4">
+          <h2 style="color: #00024d; font-weight: 600;">Let's Connect Us</h2>
+          <p style="font-size: 16px;">We'd love to help you start exceeding your career goals</p>
+          <div class="mt-3">
+            <img src="{% static 'img/email.png' %}" width="40" height="40" alt="">&nbsp;&nbsp; <span
+              style="color: #00024d; font-weight: 600;">Email</span>
+            <p style="font-size: 16px;" class="pl-5">info@mydomain.com</p>
+          </div>
+          <div class="mt-3">
+            <img src="{% static 'img/telephone.png' %}" width="40" height="40" alt="">&nbsp;&nbsp; <span
+              style="color: #00024d; font-weight: 600;">Contact Us</span>
+            <p style="font-size: 16px;" class="pl-5">+020 22564484887</p>
+          </div>
+          <div class="mt-3">
+            <img src="{% static 'img/placeholder.png' %}" width="40" height="40" alt="">&nbsp;&nbsp; <span
+              style="color: #00024d; font-weight: 600;">Office Location</span>
+            <p style="font-size: 16px;" class="pl-5">ISKCON TEMPLE AND NVCC, Katraj - Kondhwa Rd,<br>Tilekar Nagar,
+              Kondhwa Budruk, Pune, Maharashtra <br>411048, India</p>
+          </div>
+          <div class="m-3">
+            <a class="mr-3" href="https://www.instagram.com/"><img src="{% static 'img/instagram.png' %}" width="40" height="40"
+                alt=""></a>
+            <a class="mr-3" href="https://twitter.com/?lang=en-in"><img src="{% static 'img/twitter.png' %}" width="40" height="40"
+                alt=""></a>
+            <a class="mr-3" href="https://www.facebook.com/"><img src="{% static 'img/facebook.png' %}" width="40" height="40"
+                alt=""></a>
+
+          </div>
+        </div>
+        <div class="col-lg-5 col-md-6 col-sm-6 mb-5 p-2 mb-lg-0">
+          <div class="row">
+            <div class="col-lg-12 form-group">
+              <label for="fname">Full Name</label>
+              <input style="border: 2px solid lightgrey;" type="text" id="fname" class="form-control form-control-md"
+                placeholder="Full Name">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 form-group">
+              <label for="eaddress">Email Address</label>
+              <input style="border: 2px solid lightgrey;" type="text" id="eaddress" class="form-control form-control-md"
+                placeholder="Email Address">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 form-group">
+              <label for="tel">Subject</label>
+              <input style="border: 2px solid lightgrey;" type="text" id="tel" class="form-control form-control-md"
+                placeholder="Programming Language - Python">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 form-group">
+              <label for="message">Message</label>
+              <textarea style="border: 2px solid lightgrey;" name="text" id="message" cols="30" rows="3"
+                class="form-control" placeholder="Message"></textarea>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-5 form-group">
+              <input type="submit" value="Send Message" class="form-control btn btn-primary">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock 'body' %}
